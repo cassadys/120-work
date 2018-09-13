@@ -29,8 +29,9 @@
 17. Answer Weekly Questions
 
 ## Problems or Issues
-
-- Unable to install Atom packages (not yet resolved)
+1
+- Unable to install Atom packages
+- Installed 32-bit Atom and got packages installed
 
 ## Is there anything in particular you learned that you would like to discuss further?
 
