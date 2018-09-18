@@ -35,4 +35,9 @@ fill( "pink" )
 ellipse(350, 300, 45)
 fill( "pink" )
 ellipse(450, 300, 45)
+//add white triangles for teeth
+fill( "white" )
+triangle(290, 360, 345, 360, 318, 410 )
+fill( "white" )
+triangle(510, 360, 455, 360, 482, 410)
 }
