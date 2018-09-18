@@ -27,4 +27,9 @@ ellipse(400, 195, 80)
 //draw ellipse black for pupil same center as iris 55 pixels wide
 fill( "black" )
 ellipse(400, 195, 55)
+//draw pink ellipses for nostrils 45 pixels wide; centers 100 pixels apart from eachother
+fill( "pink" )
+ellipse(350, 300, 45)
+fill( "pink" )
+ellipse(450, 300, 45)
 }
