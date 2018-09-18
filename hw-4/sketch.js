@@ -21,7 +21,10 @@ line(350, 130, 450, 120)
 line(350, 110, 450, 100)
 line(350, 90, 450, 80)
 line(350, 70, 450, 60)
-//draw ellipse for eye fill white
+//draw ellipse for eye fill white center y axis 45 pixels below top edge of head
 fill( "white" )
 ellipse(400, 195, 80)
+//draw ellipse black for pupil same center as iris 55 pixels wide
+fill( "black" )
+ellipse(400, 195, 55)
 }
