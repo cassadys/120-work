@@ -1,4 +1,4 @@
-Skyler Cassady
+Skyler Cassady, 50
 
 ["Hello World!" Sketch](https://cassadys.github.io/120-work/hw-3/)
 
@@ -17,6 +17,6 @@ Had a bit of a hard time getting the canvas and background to display.  Had spac
 # Conclusion
 Very excited to be using these new tools.  Looking forward to learning more about them.
 
-## Here is my final "Hello World!"" image
+## Here is my final "Hello World!" image
 
-![final hw-3 sketch](imgs/hw-3.jpg)
+![final hw-3 sketch](imgs/hw-3.JPG)
