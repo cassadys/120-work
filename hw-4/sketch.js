@@ -1,17 +1,21 @@
 function setup(){
 //creates an 800 pixel wide and 600 pixel high canvas
-createCanvas(800, 600);
+createCanvas(800, 800);
 //colors the canvas black
 background( "black" );
 }
 function draw(){
+//draw body ellipse filled purple
+fill(75, 62, 145);
+ellipse(400, 625, 400)
 //create rectangle close to center of canvas 400 pixels wide and 300 high for head
 //rounded edges 100 pixels
-//fill face "purple"
+//fill face rgb 75, 62, 154 (purple)
 fill(75, 62, 154);
 rect(200, 150, 400, 300, 100);
 //create rectangle for nose
-fill(58, 48, 145);
+fill(58, 48, 145
+);
 rect(300, 240, 200, 120, 40);
 //create triangles for horn rgb fill horn 252 251 228
 fill( 252, 251, 228 );
@@ -41,4 +45,20 @@ fill( "white" )
 triangle(290, 361, 345, 361, 318, 410)
 fill( "white" )
 triangle(510, 361, 455, 361, 482, 410)
+//purple triangles for wings and push() to trnaslate wings into position
+push()
+translate(145, 0);
+fill(75, 62, 154)
+triangle(440, 550, 490, 500, 540, 600)
+pop()
+push()
+translate(-225, 0)
+fill(75, 62, 154)
+triangle(440, 550, 390, 500, 340, 600)
+pop()
+//purple circles for hands
+fill(75, 62, 154)
+ellipse(520, 600, 60)
+fill(75, 62, 154)
+ellipse(280, 600, 60)
 }
