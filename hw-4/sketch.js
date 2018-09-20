@@ -1,6 +1,6 @@
 function setup(){
-//creates an 800 pixel wide and 600 pixel high canvas
-createCanvas(800, 800);
+//creates an 800 pixel wide and 950 pixel high canvas
+createCanvas(800, 950);
 //colors the canvas black
 background( "black" );
 }
