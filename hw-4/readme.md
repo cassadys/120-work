@@ -22,4 +22,4 @@ Was trying to move whole shapes before fully discovering the translate() functio
 
 ## And now... The Flying Purple People Eater!
 
-![final hw-3 sketch](imgs/monster2.png)
+![final hw-4 sketch](imgs/monster2.png)
