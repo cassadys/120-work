@@ -12,6 +12,8 @@ let quadY1 = 275
 let quadY2 = 255
 let quadY3 = 300
 let quadY4 = 45
+let map1 = 1
+let map2 = 1
   //create window width/height canvas rgb 126, 186, 247
 function setup(){
     createCanvas(windowWidth, windowHeight);
@@ -104,13 +106,17 @@ fill(random(255));
     quadY4=random(height/10);
     pop();
 
+    map1 = map(mouseX, 0, width, 0, 255);
+    map2 = map(mouseY, 0, height, 0, 255);
+
   }
 
 //mousePressed random background color reset
 function mousePressed(){
 
   text(scale2000, 10, 10);
-  background(random(255), random(255), random(255));
+  background(random(255), map2, map1);
+  //background(random(255), random(255), map1));
   //text to display scale on top left when mouse is clicked
   text(scale2000, 10, 10);
   scale2000=scale2000+.02
