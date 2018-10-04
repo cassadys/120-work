@@ -10,7 +10,7 @@ This week we are learning more about math and variables.  Using order of operati
 2. Made windowWidth x windowHeight canvas
 3. Draw tangerine
 4. Translate Tangerine to different position on screen every frame(used modulo function to screen width)
-5. Rotate raians(random(360));
+5. Rotate radians(random(360));
 6. Draw variable quad every frame random 0-255 greyscale
 7. Quad position random with mouse click and reset background color
 8. Map mouseX and mouseY 0-255 for RGB values
