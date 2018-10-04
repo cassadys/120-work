@@ -23,3 +23,4 @@ Using variables and algorithmic math to create change over time in a p5.js sketc
 
 ![hw-6 sketch](imgs/Capture.JPG)
 ![hw-6 sketch2](imgs/Capture2.JPG)
+![hw-6 sketch3](imgs/Capture3.JPG)
