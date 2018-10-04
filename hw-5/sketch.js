@@ -52,7 +52,7 @@ pop();
   //.425x600=255 600 pixels
   colorX = mouseX*(255/width);
   colorY = mouseY*.425;
-  //.5*X+Y for 1-255 possible
+  //.5*X+.5Y for 1-255 possible
   colorZ = colorX*.5+colorY*.5;
 }
 
