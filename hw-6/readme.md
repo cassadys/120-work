@@ -19,7 +19,7 @@ This week we are learning more about math and variables.  Using order of operati
 
 Using variables and algorithmic math to create change over time in a p5.js sketch.  Mapping and defining ranges and variables in the sketch.
 
-### Here is a screenshot of this weeks' sketch
+### Here is a screenshot of this weeks' sketch:
 
 ![hw-6 sketch](imgs/Capture.JPG)
 ![hw-6 sketch2](imgs/Capture2.JPG)
