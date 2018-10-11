@@ -1,7 +1,7 @@
 Skyler Cassady,
 50
 
-[Live Sketch Link](Your Live Link)
+[Live Sketch Link](cassadys.github.io/120-2ork/hw-7)
 
 
 # HW 7 | Describe then Alter the Bouncing Ball
@@ -15,3 +15,7 @@ Depending on the X and Y coordinate of your mouse click you can change the direc
 ## How did you alter the sketch?
 
 Added a variable (growthFActor) to increase the size of the ellipse by between 0 and 1 pixel per frame.  Mapped variable to mouseX on mouse click.  Added random(255) fill to R and B values, set G at 1.  Reset ball.width to 40 when mouse is pressed.  Changed canvas height from 400 pixels to windowHeight.
+
+### Here is a screenshot of this week's sketch:
+
+![Week 7 Altered Bouncing Ball](imgs/Capture.JPG)
