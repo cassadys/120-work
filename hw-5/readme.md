@@ -20,4 +20,4 @@ Starting to use animation variables and math in p5.js to create change over time
 
 ![hw-5 sketch2](imgs/hw-5sketch2.JPG)
 
-[Link to hw-5 sketch]()
+[Link to hw-5 sketch](cassadys.github.io/120-work/hw-5)

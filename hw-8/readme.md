@@ -1,5 +1,7 @@
 Skyler Cassady, 50
 
+[Link to hw-8 sketch](cassadys.github.io/120-work/hw-8)
+
 # HW 8 For and While Loops #
 
 This week's homework is about for and while loops.  For loops can be used to repeat a command or set of commands as long as a condition is met.  For my assignment this week I used a nested for loop to make a grid of tiny circles covering the screen.
@@ -18,3 +20,19 @@ This week's homework is about for and while loops.  For loops can be used to rep
 10. add mousePressed function to add +10 to color2 every click and reset at 255 to 0
 11. ellipse to show color2 value as it is changed by clicking
     code: ellipse(((width/255)*color2), 30, 30)
+
+## Issues ##
+
+Had a problem with GitHub Desktop after changing computers and was unable to commit until it was resolved.  Putting the correct email address in the Git Settings fixed the problem.
+
+Error Code: Commit failed - exit code 128 received, with output: '*** Please tell me who you are.
+
+## Conclusion ##
+
+Learned how to use loops to massively simplify the creation and adjustment of repetitive functions in p5.js.  Made a cool color changing disco grid that .
+
+### Here is my sketch:
+
+![hw-8 sketch](imgs/Capture.PNG)
+![hw-8 sketch2](imgs/Capture2.PNG)
+![hw-8 sketch3](imgs/Capture3.PNG)
