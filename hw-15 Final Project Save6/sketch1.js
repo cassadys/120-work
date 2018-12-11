@@ -4,26 +4,14 @@ let stars = [];
 // let starX = 1
 // let starY = 1
 let redStar = [];
-let redNumber = 4
+let redNumber = 1
 let starNumber = 1
 let fallSpeed = 1
 let fruitX = 50
 let fruitY = 50
 let fruitZ = 20
 let fruit = []
-let fruitNumber = 5
-let orange;
-let fruit1;
-let fallArray1 = [.7, 1, 1.1, 1.3, 1.5, .9, .8, 1.6, 1.4, 1.2];
-let basket;
-let basket1;
-let basketX = mouseX
-let basketY = windowHeight - 50
-
-function preload(){
-  orange = loadImage('imgs/orange2.png')
-  basket = loadImage('imgs/basket.png')
-}
+let fruitNumber = 4
 
 function mousePressed(){
   for (let i = 0; i < redNumber; i++){
@@ -36,13 +24,11 @@ if (redStar[i].clicked()) {
 
 function setup(){
 createCanvas(windowWidth, windowHeight);
-let basket1 = new Basket(basketX, basketY)
 for (let i = 0; i < fruitNumber; i++){
-let fruitX = random(windowWidth)
-let fruitY = 50
-fruit[i] = new Fruit(fruitX, fruitY);
-// let fruit1 = new Fruit(fruitX, fruitY);
-// fruit.push(fruit1);
+let fruitX = random(50)
+let fruitY = random(50)
+let fruitZ = random(50)
+fruit[i] = new Fruit(fruitX, fruitY, fruitZ);
 }
 for (let i = 0; i < redNumber; i++){
 let x2 = random(width);
@@ -65,10 +51,9 @@ for (let i = 0; i < starNumber; i++){
 
 function draw(){
   background(0);
-  basket1.show();
   for (let i = 0; i < fruit.length; i++){
   fruit[i].show();
-  fruit[i].fall(fallArray1[i]);
+  fruit[i].fall(1);
 }
   for (let i = 0; i < redStar.length; i++){
 redStar[i].move();
@@ -155,34 +140,53 @@ ellipse(this.x, this.y, this.z*2);
 }
 
 class Fruit {
-  constructor(fruitX, fruitY){
+  constructor(fruitX, fruitY, fruitZ){
     this.x = fruitX
     this.y = fruitY
+    this.z = fruitZ
   }
   fall(fallSpeed){
 this.y = this.y + fallSpeed
   }
     show(){
-      image(orange, this.x, this.y);
-    //   push();
-    // fill("Orange");
-    // ellipse(this.x, this.y, this.z*2);
-    // pop();
+      //draw orange ellipse for tangerine
+          push();
+          //noStroke();
+          fill( "orange" );
+            ellipse(200, 200, 80);
+      //rotate1=rotate1+1
+      //rotate1=random(360)
+      //draw brown stem
+
+
+
+          push();
+          noStroke();
+            fill(102, 53, 11);
+          rect(200, 142 , 3, 18);
+          pop();
+      //make black points on tangerine
+          point(220, 180);
+          point(210, 190);
+          point(230, 210);
+          point(170, 200);
+          point(175, 180);
+          point(187, 230);
+          point(190, 200);
+      //make green leaf and translate into place
+          push();
+          translate(-14, -55);
+          fill( "green" );
+          quad(200, 200, 210, 200, 215, 205, 205, 205);
+          pop();
+
+          pop();
+
+          pop();
+
   }
 }
 
-class Basket {
-  constructor(basketX, basketY){
-  this.x = basketX
-  this.y = basketY
-}
-show(){
-  image(basket, this.x, this.y);
-}
-collision(){
-
-}
-}
 //              /\
 //             |||
 //             \\

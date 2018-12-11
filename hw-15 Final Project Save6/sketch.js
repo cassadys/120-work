@@ -15,14 +15,9 @@ let fruitNumber = 5
 let orange;
 let fruit1;
 let fallArray1 = [.7, 1, 1.1, 1.3, 1.5, .9, .8, 1.6, 1.4, 1.2];
-let basket;
-let basket1;
-let basketX = mouseX
-let basketY = windowHeight - 50
 
 function preload(){
   orange = loadImage('imgs/orange2.png')
-  basket = loadImage('imgs/basket.png')
 }
 
 function mousePressed(){
@@ -36,7 +31,6 @@ if (redStar[i].clicked()) {
 
 function setup(){
 createCanvas(windowWidth, windowHeight);
-let basket1 = new Basket(basketX, basketY)
 for (let i = 0; i < fruitNumber; i++){
 let fruitX = random(windowWidth)
 let fruitY = 50
@@ -65,10 +59,9 @@ for (let i = 0; i < starNumber; i++){
 
 function draw(){
   background(0);
-  basket1.show();
   for (let i = 0; i < fruit.length; i++){
   fruit[i].show();
-  fruit[i].fall(fallArray1[i]);
+  fruit[i].fall(1);
 }
   for (let i = 0; i < redStar.length; i++){
 redStar[i].move();
@@ -171,18 +164,6 @@ this.y = this.y + fallSpeed
   }
 }
 
-class Basket {
-  constructor(basketX, basketY){
-  this.x = basketX
-  this.y = basketY
-}
-show(){
-  image(basket, this.x, this.y);
-}
-collision(){
-
-}
-}
 //              /\
 //             |||
 //             \\
