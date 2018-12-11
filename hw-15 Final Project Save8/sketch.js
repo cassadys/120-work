@@ -19,9 +19,8 @@ let basket;
 let basket1;
 let basketX;
 let basketY;
-let basketScale = 1
-let orangeScale = 1
-let score = 0
+let basketScale = .5
+let orangeScale = .1
 
 function preload(){
   orange = loadImage('imgs/orange3.png')
@@ -29,30 +28,22 @@ function preload(){
 }
 
 function mousePressed(){
-  for (let i = 0; i < fruitNumber; i++){
-if (fruit[i].clicked()) {
-  fruit.splice(i, 1);
+  for (let i = 0; i < redNumber; i++){
+if (redStar[i].clicked()) {
+  redStar.splice(i, 1);
   i--;
-  score += 100;
-
 }
-
 }
 }
 
 function setup(){
 createCanvas(windowWidth, windowHeight);
-textSize(30);
-let basketY = windowHeight/basketScale - 100
-let basketW = 300
-let basketH = 180
-basket1 = new Basket(basketY, basketW, basketH);
+let basketY = windowHeight/basketScale - 150
+basket1 = new Basket(basketY);
 for (let i = 0; i < fruitNumber; i++){
 let fruitX = random(windowWidth/orangeScale)
 let fruitY = 50
-let fruitW = 100
-let fruitH = 100
-fruit[i] = new Fruit(fruitX, fruitY, fruitW, fruitH);
+fruit[i] = new Fruit(fruitX, fruitY);
 // let fruit1 = new Fruit(fruitX, fruitY);
 // fruit.push(fruit1);
 }
@@ -77,14 +68,11 @@ for (let i = 0; i < starNumber; i++){
 
 function draw(){
   background(0);
-  text(score, 50, 50);
   // let basketX = mouseX
   basket1.show();
   for (let i = 0; i < fruit.length; i++){
   fruit[i].show();
   fruit[i].fall(fallArray1[i]);
-  fruit[i].clicked();
-  fruit[i].fallen();
 }
   for (let i = 0; i < redStar.length; i++){
 redStar[i].move();
@@ -171,11 +159,9 @@ ellipse(this.x, this.y, this.z*2);
 }
 
 class Fruit {
-  constructor(fruitX, fruitY, fruitR, fruitH){
+  constructor(fruitX, fruitY){
     this.x = fruitX
     this.y = fruitY
-    this.r = fruitR
-    this.h = fruitH
   }
   fall(fallSpeed){
 this.y = this.y + fallSpeed/orangeScale;
@@ -183,41 +169,25 @@ this.y = this.y + fallSpeed/orangeScale;
     show(){
       push();
       scale(orangeScale)
-      imageMode(CENTER);
-      image(orange, this.x, this.y, this.r, this.h);
+      image(orange, this.x, this.y);
       pop();
     //   push();
     // fill("Orange");
     // ellipse(this.x, this.y, this.z*2);
     // pop();
   }
-  clicked(){
-    let d = dist(mouseX, mouseY, this.x, this.y);
-    if ( d < 50 ) {
-    return true;
-  } else {
-    return false;
-  }
 }
-fallen(){
-  if ( this.y < height + 50){
-    score -= 200;
-  }
-}
-
 
 class Basket {
-  constructor(basketY, basketW, basketH){
+  constructor(basketY){
   // this.x = basketX
   this.y = basketY
-  this.w = basketW
-  this.h = basketH
 }
 show(){
   push();
   scale(basketScale);
   imageMode(CENTER);
-  image(basket, mouseX/basketScale, this.y, this.w, this.h);
+  image(basket, mouseX/basketScale, this.y);
   pop();
 }
 }
