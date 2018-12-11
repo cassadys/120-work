@@ -17,7 +17,7 @@ let fruit1;
 let fallArray1 = [.7, 1, 1.1, 1.3, 1.5, .9, .8, 1.6, 1.4, 1.2];
 let basket;
 let basket1;
-let basketX = mouseX
+let basketX;
 let basketY = windowHeight - 50
 
 function preload(){
@@ -65,6 +65,7 @@ for (let i = 0; i < starNumber; i++){
 
 function draw(){
   background(0);
+  let basketX = mouseX
   basket1.show();
   for (let i = 0; i < fruit.length; i++){
   fruit[i].show();
@@ -177,10 +178,8 @@ class Basket {
   this.y = basketY
 }
 show(){
+  this.x = mouseX
   image(basket, this.x, this.y);
-}
-collision(){
-
 }
 }
 //              /\
