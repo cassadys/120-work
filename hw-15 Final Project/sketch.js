@@ -14,6 +14,7 @@ let fruit = []
 let fruitNumber = 5
 let orange;
 let fruit1;
+let fallArray1 = [.7, 1, 1.1, 1.3, 1.5, .9, .8. 1.6, 1.4, 1.2];
 
 function preload(){
   orange = loadImage('imgs/orange2.png')
@@ -60,7 +61,7 @@ function draw(){
   background(0);
   for (let i = 0; i < fruit.length; i++){
   fruit[i].show();
-  fruit[i].fall(1);
+  fruit[i].fall(.8);
 }
   for (let i = 0; i < redStar.length; i++){
 redStar[i].move();
@@ -155,7 +156,6 @@ class Fruit {
 this.y = this.y + fallSpeed
   }
     show(){
-      background(0);
       image(orange, this.x, this.y);
     //   push();
     // fill("Orange");
