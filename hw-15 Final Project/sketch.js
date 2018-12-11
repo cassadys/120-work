@@ -154,7 +154,7 @@ class Fruit {
 this.y = this.y + fallSpeed
   }
     show(){
-      background(0);
+      background(255);
       image(orange, this.x, this.y);
     //   push();
     // fill("Orange");
