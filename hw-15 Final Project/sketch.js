@@ -4,7 +4,7 @@ let stars = [];
 // let starX = 1
 // let starY = 1
 let redStar = [];
-let redNumber = 1
+let redNumber = 4
 let starNumber = 1
 let fallSpeed = 1
 let fruitX = 50
@@ -31,10 +31,11 @@ if (redStar[i].clicked()) {
 function setup(){
 createCanvas(windowWidth, windowHeight);
 for (let i = 0; i < fruitNumber; i++){
-let fruitX = random(width)
+let fruitX = random(windowWidth)
 let fruitY = 50
-let fruit1 = new Fruit(fruitX, fruitY);
-fruit.push(fruit1);
+fruit[i] = new Fruit(fruitX, fruitY);
+// let fruit1 = new Fruit(fruitX, fruitY);
+// fruit.push(fruit1);
 }
 for (let i = 0; i < redNumber; i++){
 let x2 = random(width);
@@ -154,7 +155,7 @@ class Fruit {
 this.y = this.y + fallSpeed
   }
     show(){
-      background(255);
+      background(0);
       image(orange, this.x, this.y);
     //   push();
     // fill("Orange");
