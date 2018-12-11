@@ -11,12 +11,12 @@ let fruitX = 50
 let fruitY = 50
 let fruitZ = 20
 let fruit = []
-let fruitNumber = 1
+let fruitNumber = 5
 let orange;
 let fruit1;
 
 function preload(){
-  orange = loadImage('imgs/orange.png')
+  orange = loadImage('imgs/orange2.png')
 }
 
 function mousePressed(){
