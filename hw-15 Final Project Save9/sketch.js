@@ -11,7 +11,7 @@ let fruitX = 50
 let fruitY = 50
 let fruitZ = 20
 let fruit = []
-let fruitNumber = 91
+let fruitNumber = 5
 let orange;
 let fruit1;
 let fallArray1 = [.7, 1, 1.1, 1.3, 1.5, .9, .8, 1.6, 1.4, 1.2];
@@ -34,9 +34,6 @@ if (fruit[i].clicked()) {
   fruit.splice(i, 1);
   i--;
   score += 100;
-  function draw(){
-
-  }
 
 }
 
@@ -44,22 +41,15 @@ if (fruit[i].clicked()) {
 }
 
 function setup(){
-
 createCanvas(windowWidth, windowHeight);
-textAlign(CENTER, CENTER);
 textSize(30);
-for (let i = 0; i < fruitNumber; i++){
-  fallValue = random(16)/10 + .5
-  fallArray1.push(fallValue);
-}
 let basketY = windowHeight/basketScale - 100
 let basketW = 300
 let basketH = 180
 basket1 = new Basket(basketY, basketW, basketH);
 for (let i = 0; i < fruitNumber; i++){
 let fruitX = random(windowWidth/orangeScale)
-//make fruitY negative random so some fruit will appear far above screen and take a while to fall
-let fruitY = -random(8000)
+let fruitY = 50
 let fruitW = 100
 let fruitH = 100
 fruit[i] = new Fruit(fruitX, fruitY, fruitW, fruitH);
@@ -87,37 +77,24 @@ for (let i = 0; i < starNumber; i++){
 
 function draw(){
   background(0);
-  push();
-  fill(255);
-  text(score, 50, 100);
-  pop();
+  text(score, 50, 50);
   // let basketX = mouseX
   basket1.show();
-    for(let i = 0; i < fruit.length; i++){
-      fruit[i].show();
-      fruit[i].fall(fallArray1[i]);
-      fruit[i].clicked();
-      fruit[i].fallen(i);
-    }
-
   for (let i = 0; i < fruit.length; i++){
   fruit[i].show();
   fruit[i].fall(fallArray1[i]);
   fruit[i].clicked();
   fruit[i].fallen(i);
 }
+  for (let i = 0; i < redStar.length; i++){
+redStar[i].move();
+redStar[i].show();
 }
-
-
-//   for (let i = 0; i < redStar.length; i++){
-// redStar[i].move();
-// redStar[i].show();
-// }
-// for (let i = 0; i < stars.length; i++){
-//   stars[i].move();
-//   stars[i].show();
-//}
-
+for (let i = 0; i < stars.length; i++){
+  stars[i].move();
+  stars[i].show();
+}
+}
 
 //create redStar class ClassName {
 class RedStar {

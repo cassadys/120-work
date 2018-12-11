@@ -4,67 +4,31 @@ let stars = [];
 // let starX = 1
 // let starY = 1
 let redStar = [];
-let redNumber = 4
+let redNumber = 1
 let starNumber = 1
 let fallSpeed = 1
 let fruitX = 50
 let fruitY = 50
 let fruitZ = 20
 let fruit = []
-let fruitNumber = 91
-let orange;
-let fruit1;
-let fallArray1 = [.7, 1, 1.1, 1.3, 1.5, .9, .8, 1.6, 1.4, 1.2];
-let basket;
-let basket1;
-let basketX;
-let basketY;
-let basketScale = 1
-let orangeScale = 1
-let score = 0
-
-function preload(){
-  orange = loadImage('imgs/orange3.png')
-  basket = loadImage('imgs/basket.png')
-}
+let fruitNumber = 4
 
 function mousePressed(){
-  for (let i = 0; i < fruitNumber; i++){
-if (fruit[i].clicked()) {
-  fruit.splice(i, 1);
+  for (let i = 0; i < redNumber; i++){
+if (redStar[i].clicked()) {
+  redStar.splice(i, 1);
   i--;
-  score += 100;
-  function draw(){
-
-  }
-
 }
-
 }
 }
 
 function setup(){
-
 createCanvas(windowWidth, windowHeight);
-textAlign(CENTER, CENTER);
-textSize(30);
 for (let i = 0; i < fruitNumber; i++){
-  fallValue = random(16)/10 + .5
-  fallArray1.push(fallValue);
-}
-let basketY = windowHeight/basketScale - 100
-let basketW = 300
-let basketH = 180
-basket1 = new Basket(basketY, basketW, basketH);
-for (let i = 0; i < fruitNumber; i++){
-let fruitX = random(windowWidth/orangeScale)
-//make fruitY negative random so some fruit will appear far above screen and take a while to fall
-let fruitY = -random(8000)
-let fruitW = 100
-let fruitH = 100
-fruit[i] = new Fruit(fruitX, fruitY, fruitW, fruitH);
-// let fruit1 = new Fruit(fruitX, fruitY);
-// fruit.push(fruit1);
+let fruitX = random(50)
+let fruitY = random(50)
+let fruitZ = random(50)
+fruit[i] = new Fruit(fruitX, fruitY, fruitZ);
 }
 for (let i = 0; i < redNumber; i++){
 let x2 = random(width);
@@ -87,37 +51,19 @@ for (let i = 0; i < starNumber; i++){
 
 function draw(){
   background(0);
-  push();
-  fill(255);
-  text(score, 50, 100);
-  pop();
-  // let basketX = mouseX
-  basket1.show();
-    for(let i = 0; i < fruit.length; i++){
-      fruit[i].show();
-      fruit[i].fall(fallArray1[i]);
-      fruit[i].clicked();
-      fruit[i].fallen(i);
-    }
-
   for (let i = 0; i < fruit.length; i++){
   fruit[i].show();
-  fruit[i].fall(fallArray1[i]);
-  fruit[i].clicked();
-  fruit[i].fallen(i);
+  fruit[i].fall(1);
+}
+  for (let i = 0; i < redStar.length; i++){
+redStar[i].move();
+redStar[i].show();
+}
+for (let i = 0; i < stars.length; i++){
+  stars[i].move();
+  stars[i].show();
 }
 }
-
-
-//   for (let i = 0; i < redStar.length; i++){
-// redStar[i].move();
-// redStar[i].show();
-// }
-// for (let i = 0; i < stars.length; i++){
-//   stars[i].move();
-//   stars[i].show();
-//}
-
 
 //create redStar class ClassName {
 class RedStar {
@@ -194,58 +140,53 @@ ellipse(this.x, this.y, this.z*2);
 }
 
 class Fruit {
-  constructor(fruitX, fruitY, fruitR, fruitH){
+  constructor(fruitX, fruitY, fruitZ){
     this.x = fruitX
     this.y = fruitY
-    this.r = fruitR
-    this.h = fruitH
+    this.z = fruitZ
   }
   fall(fallSpeed){
-this.y = this.y + fallSpeed/orangeScale;
+this.y = this.y + fallSpeed
   }
     show(){
-      push();
-      scale(orangeScale)
-      imageMode(CENTER);
-      image(orange, this.x, this.y, this.r, this.h);
-      pop();
-    //   push();
-    // fill("Orange");
-    // ellipse(this.x, this.y, this.z*2);
-    // pop();
+      //draw orange ellipse for tangerine
+          push();
+          //noStroke();
+          fill( "orange" );
+            ellipse(200, 200, 80);
+      //rotate1=rotate1+1
+      //rotate1=random(360)
+      //draw brown stem
+
+
+
+          push();
+          noStroke();
+            fill(102, 53, 11);
+          rect(200, 142 , 3, 18);
+          pop();
+      //make black points on tangerine
+          point(220, 180);
+          point(210, 190);
+          point(230, 210);
+          point(170, 200);
+          point(175, 180);
+          point(187, 230);
+          point(190, 200);
+      //make green leaf and translate into place
+          push();
+          translate(-14, -55);
+          fill( "green" );
+          quad(200, 200, 210, 200, 215, 205, 205, 205);
+          pop();
+
+          pop();
+
+          pop();
+
   }
-  clicked(){
-    let d = dist(mouseX, mouseY, this.x, this.y);
-    if ( d < 50 ) {
-    return true;
-  } else {
-    return false;
-  }
-}
-fallen(index){
-  if ( this.y > height + 50){
-    score = score - 200;
-    fruit.splice(index, 1);
-    //i--;
-  }
-}
 }
 
-class Basket {
-  constructor(basketY, basketW, basketH){
-  // this.x = basketX
-  this.y = basketY
-  this.w = basketW
-  this.h = basketH
-}
-show(){
-  push();
-  scale(basketScale);
-  imageMode(CENTER);
-  image(basket, mouseX/basketScale, this.y, this.w, this.h);
-  pop();
-}
-}
 //              /\
 //             |||
 //             \\
