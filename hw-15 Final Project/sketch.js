@@ -36,8 +36,9 @@ if (redStar[i].clicked()) {
 
 function setup(){
 createCanvas(windowWidth, windowHeight);
-basketX = mouseX
-basket1 = new Basket(basketX, basketY)
+let basketX = mouseX;
+let basketY = height - 50
+basket1 = new Basket(basketX, basketY);
 for (let i = 0; i < fruitNumber; i++){
 let fruitX = random(windowWidth)
 let fruitY = 50
@@ -66,7 +67,6 @@ for (let i = 0; i < starNumber; i++){
 
 function draw(){
   background(0);
-  let basketX = mouseX
   basket1.show();
   for (let i = 0; i < fruit.length; i++){
   fruit[i].show();
@@ -179,7 +179,6 @@ class Basket {
   this.y = basketY
 }
 show(){
-  this.x = mouseX
   image(basket, this.x, this.y);
 }
 }
