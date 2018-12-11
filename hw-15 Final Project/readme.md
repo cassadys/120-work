@@ -16,3 +16,16 @@ Skyler Cassady, 50
 8. Use for loop to add fruitNumber of random fall speed values between .5 and 2.1
 9. render basket image at mouseX and bottom of screen
 10. Use for loop to draw "fruitNumber" of orange images at random x and y values, y values go up to -8000 px so the fruits will fall for a long time
+11. adjust basket and orange to fit properly on screen
+12. Use for loop and functions defined within Fruit class to make many random orange shapes that fall at variable speeds and will disappear when clicked adding 100 to "score" or subtract 200 from score if they fall above windowHeight
+13. Adjust number of oranges and variables to make the game playable
+
+### Issues
+
+Had problems resizing a PNG image before saving it to the imgs folder causing the background to lose its opacity.  
+
+Used scale to adjust the size of basket and orange and had another issue that stopped the clicked() function from working because of the distortion of distance
+
+### Here is a screenshot of the Orange game
+![Orange Game](imgs/Capture.JPG)
+![Orange Game](imgs/Capture2.JPG)
